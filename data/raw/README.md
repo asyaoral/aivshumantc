@@ -2,14 +2,6 @@
 
 All files use `0 = AI or mixed authorship` and `1 = Human`.
 
-## Heterogeneous AI Spans split
-
-The original `train-2.parquet` contains 3,509 matched pairs. Each `source_id` has one fully human control and one mixed-authorship version containing AI-written spans. The sources are Project Gutenberg, Standard Ebooks, JMLR papers, Federal Reserve Beige Book reports, WikiText-2, and Hansard.
-
-Five hundred pairs from 123 complete `group_id` source groups were reserved in `AI vs Human Test Set (heterogeneous spans).csv`. No passage belonging to those source groups remains in `AI vs Human Training Set.csv`. The remaining 3,009 pairs stay in training. The split is reproducible with `scripts/create_heterogeneous_challenge.py` and `random_state = 18093`.
-
-The Parquet file records construction-based span annotations, but `human_verified` is `False` for every row. Therefore, these spans should not be described as manually human-verified.
-
 ## Data handling rules
 
 - Keep the training dataset and the three held-out datasets separate.

@@ -89,6 +89,9 @@ The project uses `0 = AI` and `1 = Human` in every file.
 - The paired design reduces topic-based shortcuts and tests whether the classifier recognizes less obvious AI signals.
 - This set is reported separately from the standard test set and is never used for tuning.
 
+
+
+
 ## AI vs Human Test Set (heterogeneous spans).csv
 
 **Purpose:** measure performance on mixed-authorship documents whose complete source groups were excluded from training.
