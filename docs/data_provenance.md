@@ -1,10 +1,11 @@
-# Dataset sources, provenance and permission audit — complete before PUBLIC push
+# Dataset provenance
 
-- Who collected / generated the AI examples?
-- Which model versions and prompts were used? Any AI data reused from public datasets?
-- Where do human excerpts come from (books, articles, licenses)?
-- Exact number of original / augmented examples and how augmentation was done?
-- Which samples were label-flipped for diagnostic experiment? Separate from main.
-- What are the explicit terms for public redistribution of raw and cleaned text? Add links/evidence.
+The final experiment uses three separate datasets:
 
-**No license has been established for the main text corpus.** Public GitHub data upload is unsafe until the team's rights to distribute third-party texts are confirmed. Code license does not confer data rights.
+- The training dataset contains the original project corpus, 1,000 matched HC3 pairs, and 3,509 Heterogeneous AI Spans pairs.
+- The external test contains 500 AI and 500 human texts and is kept separate from training.
+- The HIP books challenge contains 400 AI and 400 human literary examples.
+
+All labels follow `0 = AI` and `1 = Human`. Exact normalized text overlap across the three datasets is checked by the code.
+
+Before redistributing or reusing the texts, verify the license and attribution requirements of every original source. The software license does not automatically grant rights to the datasets.

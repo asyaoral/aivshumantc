@@ -1,4 +1,5 @@
-The command `python -m src.preprocess --input data/raw/ai_vs_human.csv` generates `cleaned.csv` here.
-Cleaning: whitespace normalization, blank/short removal, contradictory-label group exclusion, exact deduplication. Review `outputs/data_quality.json`.
+# Processed data
 
-Processed samples may still be protected by third-party copyright. Only commit them after verification of rights.
+The final code cleans all three datasets in memory. It normalizes whitespace, removes texts shorter than 50 words, excludes conflicting labels, and removes exact duplicates.
+
+The verified data-quality summary is stored in `outputs/latest/data_quality.csv`.

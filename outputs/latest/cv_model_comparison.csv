@@ -1,0 +1,6 @@
+Experiment,Model,Remove stop words,Manual features,CV Accuracy,CV F1 (macro),CV F1 std
+SVM | TF-IDF + 6 linguistic features,SVM,False,True,0.896068051799262,0.8960527706042006,0.0034736594218292317
+SVM | TF-IDF (keep stop words),SVM,False,False,0.8950996591586472,0.8950827410993091,0.004930503940080584
+Logistic Regression | TF-IDF (keep stop words),Logistic Regression,False,False,0.8757984032267883,0.8757715562345177,0.004870140975384517
+SVM | TF-IDF (remove stop words),SVM,True,False,0.8602914086347102,0.8602722147729501,0.007186223121920376
+Naive Bayes | TF-IDF (keep stop words),Naive Bayes,False,False,0.7112179189194169,0.6922353700985131,0.00961189941092425

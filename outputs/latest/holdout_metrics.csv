@@ -1,2 +1,0 @@
-dataset_sha256,n_train,n_holdout,selected_model,selected_cv_f1_macro,accuracy,macro_precision,macro_recall,macro_f1,holdout_errors
-bd5454ec76ed9355d371da77f28fc70de6a38cad0dc1b7a0e47dec593b1b79b9,2705,677,Linear SVM,0.9896483943010292,0.982274741506647,0.9822743934369,0.9822743934369,0.9822743934369,12

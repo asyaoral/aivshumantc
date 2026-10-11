@@ -1,9 +1,11 @@
-Place the exported main CSV here as `ai_vs_human.csv`.
+# Raw datasets
 
-In Apple Numbers open `AI_vs_Human_Text_Classification_augmented.numbers` → **File → Export To → CSV** → save as `data/raw/ai_vs_human.csv`.
+This directory contains the three complete datasets used by the final code.
 
-CSV MUST have header `Text,Class` (comma **or** semicolon delimiter). Classes: `0` AI, `1` Human.
+| File | Purpose | Labels |
+|---|---|---|
+| `AI_vs_Human_Text_Classification_HC3_Heterogeneous_augmented.csv` | Training | `0 = AI`, `1 = Human` |
+| `Train_Data_Set_HC3_expanded.csv` | External test | `0 = AI`, `1 = Human` |
+| `HIP_books_challenge_test.csv` | Challenge test | `0 = AI`, `1 = Human` |
 
-The 200-example flipped-label diagnostic belongs to a separate experiment and must never be merged into the primary dataset.
-
-Raw text may contain copyrighted material. Before public GitHub upload, document **actual sources and redistribution rights**. Data files are ignored by default for your safety.
+The datasets are kept separate. The external and challenge sets must not be used for model selection or parameter tuning.

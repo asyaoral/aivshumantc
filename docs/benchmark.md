@@ -1,24 +1,23 @@
-# Evaluation protocol and related work
+# Evaluation protocol
 
-## Internal benchmark
+Five configurations are compared with pair-aware stratified five-fold cross-validation on the training dataset. TF-IDF and feature scaling are fitted inside each fold. Matched human and AI examples remain in the same fold.
 
-Five models/settings are compared on exactly the same 80% **training** partition using five-fold stratified CV. Each pipeline fits TF-IDF vocabulary and any scaler strictly within its own training fold. Choose the best candidate by **mean macro-F1**. Report cross-validation accuracy, mean macro-F1 and standard deviation. Evaluate the untouched 20% holdout **once**, after model selection, and show macro precision, macro recall, macro-F1, accuracy and confusion matrix.
+The selected model is the configuration with the highest mean macro-F1. Macro-F1 gives equal importance to AI (`0`) and Human (`1`).
 
-Macro-F1 gives AI (`0`) and Human (`1`) equal importance and discourages misleadingly strong accuracy when one class dominates. We additionally report accuracy for readability; this particular corpus is approximately balanced.
+The external test and HIP books challenge sets are evaluated only after model selection. Their results are reported separately because they measure different forms of generalization.
 
-Compare Multinomial Naive Bayes, Logistic Regression and Linear SVM as required class baselines. Compare stop-word ablation and the six hand-crafted linguistic features on SVM. Do not label a method not implemented in `src/models.py` as a new method.
+## Verified results
 
-## Related published datasets and robustness tests (QUALITATIVE only)
+| Evaluation | Accuracy | Macro-F1 |
+|---|---:|---:|
+| Training CV | 0.8961 | 0.8961 |
+| External test | 0.8980 | 0.8980 |
+| HIP books challenge | 0.7400 | 0.7391 |
 
-- HC3: Guo et al. (2023), *How Close is ChatGPT to Human Experts?* https://arxiv.org/abs/2301.07597
-- SemEval-2024 Task 8: https://aclanthology.org/2024.semeval-1.148/
-- RAID: Dugan et al. (2024), https://aclanthology.org/2024.acl-long.674/
+The best configuration is Linear SVM with word TF-IDF and six linguistic features.
 
-The papers use different tasks, domains and testing procedures. Their raw accuracy cannot be ranked against ours. A fair numerical external benchmark requires the same evaluation dataset and protocol. Our present result is **within-corpus** generalization only, not real-world AI authorship proof.
+## Interpretation
 
-## Limitations / data novelty
+The external test result measures performance on a separate balanced dataset. The HIP result measures robustness on more difficult literary and partially AI-modified texts. Neither score proves authorship for an individual document.
 
-- Exact-match deduplication does not remove near-duplicates or texts paraphrased from the same source.
-- Subject/source differences can leak dataset provenance: human book excerpts vs AI-generated texts may not match in topic.
-- Validate that data augmentation preserved credible labels and copyright permissions. The 200 flipped-label essays are NOT part of our main clean dataset.
-- For the professor's data novelty score, record original sources, transformations, new samples, and the cleaning script (`src/preprocess.py`) honestly.
+Topic, source, length, and writing style may still correlate with labels. Exact-match checks also cannot identify every paraphrase or near-duplicate.
