@@ -4,7 +4,13 @@ This project classifies English texts as AI-generated (`0`) or human-written (`1
 
 ## Files
 
-- `nlp_project1_ai_vs_human_clean.py`: final working training and evaluation code.
+- `nlp_project1_ai_vs_human_clean.py`: small entry point that starts the pipeline.
+- `pipeline/config.py`: paths and experiment settings.
+- `pipeline/data.py`: loading, cleaning, overlap checks, and pair grouping.
+- `pipeline/features.py`: six linguistic features.
+- `pipeline/models.py`: TF-IDF pipelines and training cross-validation.
+- `pipeline/evaluation.py`: held-out metrics, predictions, and figures.
+- `pipeline/run.py`: end-to-end experiment flow.
 - `data/raw/AI_vs_Human_Text_Classification_HC3_Heterogeneous_augmented.csv`: training dataset.
 - `data/raw/Train_Data_Set_HC3_expanded.csv`: external test dataset.
 - `data/raw/HIP_books_challenge_test.csv`: HIP books challenge dataset.
