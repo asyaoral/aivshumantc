@@ -14,6 +14,7 @@ This project classifies English texts as AI-generated (`0`) or human-written (`1
 - `data/raw/AI_vs_Human_Text_Classification_HC3_Heterogeneous_augmented.csv`: training dataset.
 - `data/raw/Train_Data_Set_HC3_expanded.csv`: external test dataset.
 - `data/raw/HIP_books_challenge_test.csv`: HIP books challenge dataset.
+- `data/processed/AI_vs_Human_Text_Classification_processed.csv`: cleaned training dataset used by the pipeline.
 - `outputs/latest/`: verified metrics, predictions, error files, and figures.
 
 ## Dataset
