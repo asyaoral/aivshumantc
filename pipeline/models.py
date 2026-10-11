@@ -25,6 +25,11 @@ def make_model(name: str, *, remove_stop_words: bool = False,
     }
     if name not in models:
         raise ValueError(f"Unknown model: {name}")
+    if name == "Naive Bayes" and add_manual_features:
+        raise ValueError(
+            "Multinomial Naive Bayes requires non-negative inputs; "
+            "the scaled manual features may contain negative values."
+        )
 
     feature_steps = [(
         "tfidf",
@@ -59,6 +64,8 @@ def evaluate_candidates(X_train: pd.DataFrame, y_train: pd.Series,
     experiments = [
         ("Naive Bayes | TF-IDF (keep stop words)", "Naive Bayes", False, False),
         ("Logistic Regression | TF-IDF (keep stop words)", "Logistic Regression", False, False),
+        ("Logistic Regression | TF-IDF (remove stop words)", "Logistic Regression", True, False),
+        ("Logistic Regression | TF-IDF + 6 linguistic features", "Logistic Regression", False, True),
         ("SVM | TF-IDF (keep stop words)", "SVM", False, False),
         ("SVM | TF-IDF (remove stop words)", "SVM", True, False),
         ("SVM | TF-IDF + 6 linguistic features", "SVM", False, True),

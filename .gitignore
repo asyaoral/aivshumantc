@@ -5,6 +5,8 @@ __pycache__/
 .pytest_cache/
 .DS_Store
 .vscode/
+.codex-ppt-build/
+.chart-data-*/
 
 # Local model binaries and private misclassified text excerpts
 outputs/private/

@@ -1,4 +1,5 @@
 Dataset,Original rows,Short texts excluded,Conflicting-label text groups,Conflicting-label rows excluded,Same-label duplicates excluded,Usable unique texts,AI (0),Human (1)
-Training,12420,37,0,0,0,12383,6206,6177
+Training,11420,37,0,0,0,11383,5706,5677
 External test,1000,0,0,0,0,1000,500,500
 HIP books challenge,800,0,0,0,0,800,400,400
+Heterogeneous spans challenge,1000,0,0,0,0,1000,500,500

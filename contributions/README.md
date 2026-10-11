@@ -1,4 +1,4 @@
-# Individual contributions — required before Monday's submission
+# Individual contributions
 
 Each team member must create ONE file using their verified identity and GitHub username:
 
@@ -15,4 +15,4 @@ Example content (replace with *true* contributions):
 - **Evidence:** Links to my real Git commits / PRs.
 ```
 
-Do not claim another member's work or generate artificial commits. Professor checks Git diffs.
+Each summary must match the member's real work and Git history. Add links to genuine commits or pull requests where available. Do not claim another member's work or generate artificial commits; the contribution files supplement, rather than replace, the GitHub diff history.

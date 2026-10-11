@@ -1,5 +1,6 @@
 """Dataset loading, cleaning, leakage checks, and pair grouping."""
 from pathlib import Path
+from itertools import combinations
 import re
 
 import pandas as pd
@@ -73,17 +74,16 @@ def clean_dataset(raw: pd.DataFrame, dataset_name: str) -> tuple[pd.DataFrame, d
     return cleaned, report
 
 
-def verify_no_overlap(train: pd.DataFrame, test: pd.DataFrame, challenge: pd.DataFrame) -> None:
-    train_test = set(train["text_key"]) & set(test["text_key"])
-    train_challenge = set(train["text_key"]) & set(challenge["text_key"])
-    test_challenge = set(test["text_key"]) & set(challenge["text_key"])
-    if train_test or train_challenge or test_challenge:
-        raise ValueError(
-            "Data leakage detected across datasets: "
-            f"train/test={len(train_test)}, "
-            f"train/challenge={len(train_challenge)}, "
-            f"test/challenge={len(test_challenge)}."
-        )
+def verify_no_overlap(**datasets: pd.DataFrame) -> None:
+    """Reject exact normalized text overlap across any named datasets."""
+    overlaps = {}
+    for (left_name, left), (right_name, right) in combinations(datasets.items(), 2):
+        overlap = set(left["text_key"]) & set(right["text_key"])
+        if overlap:
+            overlaps[f"{left_name}/{right_name}"] = len(overlap)
+    if overlaps:
+        details = ", ".join(f"{pair}={count}" for pair, count in overlaps.items())
+        raise ValueError(f"Data leakage detected across datasets: {details}.")
 
 
 def training_group(source_row: int) -> str:

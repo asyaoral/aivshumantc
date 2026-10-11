@@ -1,3 +1,4 @@
 Dataset,Selected experiment,Train CV F1 (macro),Accuracy,Precision (macro),Recall (macro),F1 (macro)
-External test,SVM | TF-IDF + 6 linguistic features,0.8960527706042006,0.898,0.8980063681018896,0.898,0.897999591998368
-HIP books challenge,SVM | TF-IDF + 6 linguistic features,0.8960527706042006,0.74,0.7432165387246332,0.74,0.7391375234368631
+External test,SVM | TF-IDF + 6 linguistic features,0.8971138016123573,0.896,0.8960570322126387,0.896,0.8959962558652111
+HIP books challenge,SVM | TF-IDF + 6 linguistic features,0.8971138016123573,0.72375,0.7306121528739556,0.72375,0.7216795568282175
+Heterogeneous spans challenge,SVM | TF-IDF + 6 linguistic features,0.8971138016123573,0.861,0.861001444005776,0.861,0.860999860999861

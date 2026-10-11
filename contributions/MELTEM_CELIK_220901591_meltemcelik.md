@@ -7,6 +7,9 @@
 | Areas | **Notebook Execution**, **Results Review**, **Presentation**, **Report** |
 
 ## Summary
-- Executed the project notebook with the provided datasets and collected the experiment outputs.
-- Reviewed the results and prepared the project presentation based on them.
-- Contributed to preparing the project report (`README.md`).
+- Executed the project pipeline with the provided datasets and collected the experiment outputs.
+- Reviewed the final pipeline outputs and compared the reported CV and held-out metrics.
+- Contributed to preparing and reviewing the project presentation based on the current four-dataset experiment.
+- Contributed to preparing and reviewing the project report (`README.md`).
+
+Before submission, this summary should be checked against the contributor's actual GitHub commits and updated with commit or pull-request links where available.

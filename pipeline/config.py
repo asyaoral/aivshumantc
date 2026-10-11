@@ -3,7 +3,7 @@ from pathlib import Path
 import os
 
 RANDOM_STATE = 42
-MIN_WORDS = 50
+MIN_WORDS = int(os.environ.get("NLP_MIN_WORDS", "50"))
 MIN_REQUIRED = 1000
 CV_FOLDS = 5
 MAX_FEATURES = 5000
@@ -37,6 +37,10 @@ TEST_DATA_PATH = configured_path(
 CHALLENGE_DATA_PATH = configured_path(
     "NLP_CHALLENGE_DATA_PATH",
     "AI vs Human Test Set (edge cases).csv",
+)
+HETEROGENEOUS_CHALLENGE_DATA_PATH = configured_path(
+    "NLP_HETEROGENEOUS_CHALLENGE_DATA_PATH",
+    "AI vs Human Test Set (heterogeneous spans).csv",
 )
 OUTPUT_DIR = Path(os.environ.get("NLP_OUTPUT_DIR", "nlp_project_outputs"))
 
