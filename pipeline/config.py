@@ -12,10 +12,7 @@ MAX_FEATURES = 5000
 ORIGINAL_TRAINING_ROWS = 3402
 HC3_END_ROW = 5402
 
-LOCAL_DATA_DIR = Path(
-    "/Users/beyza/Documents/Codex/2026-10-09/"
-    "senden-ai-vs-human-data-set/outputs"
-)
+LOCAL_DATA_DIR = Path(__file__).resolve().parents[1] / "data" / "raw"
 
 
 def configured_path(environment_name: str, filename: str) -> Path:
@@ -31,15 +28,15 @@ def configured_path(environment_name: str, filename: str) -> Path:
 
 TRAIN_DATA_PATH = configured_path(
     "NLP_TRAIN_DATA_PATH",
-    "AI_vs_Human_Text_Classification_HC3_Heterogeneous_augmented.csv",
+    "AI vs Human Training Set.csv",
 )
 TEST_DATA_PATH = configured_path(
     "NLP_TEST_DATA_PATH",
-    "Train_Data_Set_HC3_expanded.csv",
+    "AI vs Human Test Set.csv",
 )
 CHALLENGE_DATA_PATH = configured_path(
     "NLP_CHALLENGE_DATA_PATH",
-    "HIP_books_challenge_test.csv",
+    "AI vs Human Test Set (edge cases).csv",
 )
 OUTPUT_DIR = Path(os.environ.get("NLP_OUTPUT_DIR", "nlp_project_outputs"))
 

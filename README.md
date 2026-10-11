@@ -11,9 +11,9 @@ This project classifies English texts as AI-generated (`0`) or human-written (`1
 - `pipeline/models.py`: TF-IDF pipelines and training cross-validation.
 - `pipeline/evaluation.py`: held-out metrics, predictions, and figures.
 - `pipeline/run.py`: end-to-end experiment flow.
-- `data/raw/AI_vs_Human_Text_Classification_HC3_Heterogeneous_augmented.csv`: training dataset.
-- `data/raw/Train_Data_Set_HC3_expanded.csv`: external test dataset.
-- `data/raw/HIP_books_challenge_test.csv`: HIP books challenge dataset.
+- `data/raw/AI vs Human Training Set.csv`: training dataset.
+- `data/raw/AI vs Human Test Set.csv`: external test dataset.
+- `data/raw/AI vs Human Test Set (edge cases).csv`: HIP books challenge dataset.
 - `data/processed/AI_vs_Human_Text_Classification_processed.csv`: cleaned training dataset used by the pipeline.
 - `outputs/latest/`: verified metrics, predictions, error files, and figures.
 
@@ -42,9 +42,9 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 
-NLP_TRAIN_DATA_PATH="data/raw/AI_vs_Human_Text_Classification_HC3_Heterogeneous_augmented.csv" \
-NLP_TEST_DATA_PATH="data/raw/Train_Data_Set_HC3_expanded.csv" \
-NLP_CHALLENGE_DATA_PATH="data/raw/HIP_books_challenge_test.csv" \
+NLP_TRAIN_DATA_PATH="data/raw/AI vs Human Training Set.csv" \
+NLP_TEST_DATA_PATH="data/raw/AI vs Human Test Set.csv" \
+NLP_CHALLENGE_DATA_PATH="data/raw/AI vs Human Test Set (edge cases).csv" \
 NLP_OUTPUT_DIR="outputs/latest" \
 python nlp_project1_ai_vs_human_clean.py
 ```
