@@ -1,0 +1,13 @@
+{
+  "raw_rows": 3402,
+  "blank_or_missing_removed": 0,
+  "too_short_removed": 20,
+  "conflicting_text_groups": 0,
+  "conflicting_rows_removed": 0,
+  "duplicate_rows_removed": 0,
+  "clean_rows": 3382,
+  "ai_count": 1698,
+  "human_count": 1684,
+  "minimum_words": 50,
+  "csv_sha256": "bd5454ec76ed9355d371da77f28fc70de6a38cad0dc1b7a0e47dec593b1b79b9"
+}

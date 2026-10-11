@@ -1,0 +1,18 @@
+# Python and local virtual environments
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+.vscode/
+
+# Local model binaries and private misclassified text excerpts
+outputs/private/
+outputs/**/private/
+outputs/latest/selected_model.joblib
+outputs/**/selected_model.joblib
+outputs/smoke_old_data/
+
+# Apple Numbers source files
+*.numbers
+data/raw/*.numbers
